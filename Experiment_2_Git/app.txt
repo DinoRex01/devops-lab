@@ -1,1 +1,2 @@
 # Bank Management Application
+Feature: Admin Analytics and Reporting Module
