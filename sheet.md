@@ -29,3 +29,26 @@ git commit -am "Resolved"
 # 7. Prove it worked with the graph
 # -> TAKE SCREENSHOT 2 HERE (Shows the branching/merging lines)
 git log --oneline --graph -n 4
+
+# EXPERIMENT 3: GITHUB ACTIONS (CI/CD SPEEDRUN)
+# 1. Create the required hidden GitHub folder
+mkdir -p .github/workflows
+
+# 2. Create a minimalist pipeline file
+cat << 'INNER_EOF' > .github/workflows/ci.yml
+name: Minimal CI
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "All tests passed successfully!"
+INNER_EOF
+
+# 3. Trigger the pipeline
+git add .
+git commit -m "ci: trigger pipeline"
+git push origin main
+
+# 4. View Output
+# -> TAKE SCREENSHOT 1 HERE (Go to your GitHub repository in the browser -> Click the 'Actions' tab -> Click the workflow run to show the green checkmark)
