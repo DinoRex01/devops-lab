@@ -21,5 +21,5 @@ INNER_EOF
 python track.py
 
 # 5. Prove the data was recorded locally in the 'mlruns' directory
-# -> TAKE SCREENSHOT 1 HERE (Shows the success message and the contents of the generated tracking folder)
-ls -la mlruns/0/
+# -> TAKE SCREENSHOT 1 HERE (Shows the success message and the generated mlflow.db file)
+ls -la
